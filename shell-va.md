@@ -49,3 +49,19 @@ do
 done
 
 ```
+
+##获取输入参数`getopts`
+
+```
+while getopts "s:sourcepath" arg
+do
+    case $arg in
+        s)
+            echo "source path:$OPTARG"
+            ;;
+        *)
+            echo "unknown option $arg"
+            ;;
+    esac
+done
+```
