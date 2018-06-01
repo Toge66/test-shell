@@ -59,7 +59,10 @@ echo "extend: $FILEEXTENSION \n"
 function exportFile() {
 	# find $SOURCE_PATH -type f > /tmp/file.txt
 	touch /tmp/filecontent.txt 
-	rm $OUTPUTFILE_PATH
+	if [ -f $OUTPUTFILE_PATH ]
+	then
+		rm $OUTPUTFILE_PATH
+	fi
 	for i in $(find $SOURCE_PATH -type f)
 	do
 
